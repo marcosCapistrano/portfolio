@@ -1,7 +1,6 @@
-import { SignIn, SignInButton, SignOutButton, SignedOut, useUser } from "@clerk/nextjs";
+import { SignIn, SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 import { api } from "~/utils/api";
 
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
         {user.isSignedIn ? <SignOutButton /> : <SignInButton />}
         <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" />
         {data?.map(post => (
-          <div>{post.content}</div>
+          <div key={post.id}>{post.content}</div>
         ))}
       </main>
     </>

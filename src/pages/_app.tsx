@@ -1,4 +1,4 @@
-import { AppProps, AppType } from 'next/app';
+import { AppType } from 'next/app';
 import { ClerkProvider } from '@clerk/nextjs';
 
 import { api } from "~/utils/api";
