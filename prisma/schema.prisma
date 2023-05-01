@@ -11,9 +11,12 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Post {
+model Project {
     id String @id @default(cuid())
     createdAt DateTime @default(now())
 
-    content String @db.VarChar(255)
+    title String @db.VarChar(255)
+    description String @db.VarChar(255)
+    imageUrl String @db.VarChar(255)
+    destUrl String @db.VarChar(255)
 }
